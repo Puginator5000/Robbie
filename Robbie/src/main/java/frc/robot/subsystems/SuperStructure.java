@@ -28,7 +28,7 @@ public class SuperStructure extends SubsystemBase{
         STOW
     }
 
-    private static SuperStructure instance;
+    private static SuperStructure instance = new SuperStructure();
 
     SuperStructureState state = SuperStructureState.STOW;
     
@@ -40,10 +40,7 @@ public class SuperStructure extends SubsystemBase{
 
     }
 
-    public static SuperStructure getInstance(){
-        if (instance == null){
-            instance = new SuperStructure();
-        }
+    public static SuperStructure getInstance(){ //can call from other classes
         return instance;
     }
 
